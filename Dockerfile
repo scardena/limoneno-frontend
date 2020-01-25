@@ -1,15 +1,16 @@
 # Use a node image
 FROM node AS builder
 # Install yarn
-RUN npm install yarn -g
+#Adding --force otherwise it throws
+RUN npm install yarn -g --force
 # Define the work directory
 WORKDIR /limoneno
 # Copy the project
 COPY . .
 # Delete dev env file
-RUN rm src/config/config.ts
+#RUN rm src/config/config.ts
 # Put prod env file
-RUN mv src/config/config.prod.ts src/config/config.ts 
+#RUN mv src/config/config.prod.ts src/config/config.ts 
 # Install yarn
 RUN yarn install
 # Build the project
