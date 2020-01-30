@@ -49,7 +49,7 @@ phases:
       - docker tag limoneno-frontend:latest 008456815799.dkr.ecr.$region.amazonaws.com/limoneno-frontend:$tagImageDate
       - docker tag limoneno-frontend:latest 008456815799.dkr.ecr.$region.amazonaws.com/limoneno-frontend:latest
       - docker push 008456815799.dkr.ecr.$region.amazonaws.com/limoneno-frontend:$tagImageDate
-      #- docker push 008456815799.dkr.ecr.$region.amazonaws.com/limoneno-frontend:$tagImageCommit
+      - docker push 008456815799.dkr.ecr.$region.amazonaws.com/limoneno-frontend:latest
 
       #updating the Dockerrun file to the built image
       #- sed -i 's/ENVIRONMENT/'$region/ .ebextensions/awslogs.config
