@@ -101,7 +101,7 @@ class LoginContainer extends React.Component {
             <Form.Item className="buttons">
               <Button type="primary" size="large" 
                 onClick={this.login.bind(this, {})}
-                className="login">Hello!</Button>
+                className="login">Bienvenido!!!!!!</Button>
             </Form.Item>
           </Form>
           </div>
