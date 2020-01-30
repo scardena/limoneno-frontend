@@ -23,6 +23,9 @@ phases:
       #
       - pip install awsebcli --upgrade
       - eb init --platform "docker" --region $AWS_DEFAULT_REGION frontend
+
+
+      - apt-get install -y stress
   #The building proccess is moved to pre_build stage, as if the build fails, it will still proceed to the post_build stage, hence it may upload broken images to ECR.
   pre_build: 
     commands:
@@ -54,6 +57,7 @@ phases:
   build:
     commands:
       - echo 'Build succeded!'
+
   post_build:
     commands:
       - eb clone frontend-blue -n frontend-green
